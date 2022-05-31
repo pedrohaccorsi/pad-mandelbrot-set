@@ -1,6 +1,6 @@
 # pad-mandelbrot-set
 
-Project for the subject *High Perforamnce Processing* (abbreviated to *PAD* in Portuguese). It consists on generating a Mandelbrot Set, but the key is that the generation must happen in a thread-based methodology, where each thread will be responsible for a given subset of the result.
+Project for the subject **High Perforamance Processing** *(Processamento de Alto Desempenho -or PAD- in Portuguese)*. It consists on generating a Mandelbrot Set, but the key is that the generation must happen in a thread-based methodology, where each thread will be responsible for a given subset of the result.
 
 ## Running the set
 

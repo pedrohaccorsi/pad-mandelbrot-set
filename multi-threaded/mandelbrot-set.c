@@ -110,7 +110,6 @@ int main() {
     quadrantMetada.pixel.width         = ( quadrantMetada.cx.max - quadrantMetada.cx.min ) / quadrantMetada.x_max;
     quadrantMetada.pixel.height        = ( quadrantMetada.cy.max - quadrantMetada.cy.min ) / quadrantMetada.y_max;
 
- 
     if (pthread_create(&worker1, NULL, computeQuadrant, &quadrantMetada)){
 		printf("Error creating thread\n");
 		return -1;
