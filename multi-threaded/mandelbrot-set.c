@@ -29,7 +29,7 @@ struct QuadrantMetadata {
     FILE * filePointer;
 };
 
-void *computeQuadrant(void *quadrantMetadata){
+void * computeQuadrant(void *quadrantMetadata){
 
     static unsigned char color[3];
     double cx, cy;
@@ -39,14 +39,14 @@ void *computeQuadrant(void *quadrantMetadata){
  
 	struct QuadrantMetadata *metadata = (struct QuadrantMetadata *)quadrantMetadata;
  
-    for (int y=0; y < metadata->y_max; y++) {
+    for (int y= 0; y < metadata->y_max; y++) {
 
         cy = metadata->cy.min + y * metadata->pixel.height;
 
         if (fabs(cy) < metadata->pixel.height / 2)
             cy = 0.0;  
 
-        for (int x=0; x < metadata->x_max; x++) {
+        for (int x= 0; x < metadata->x_max; x++) {
 
             cx = metadata->cx.min + x * metadata->pixel.width;
             Zx = 0.0;
@@ -77,7 +77,9 @@ void *computeQuadrant(void *quadrantMetadata){
 
         }
 
-    }
+    }  
+
+    return 0;
 
 }
 
@@ -99,14 +101,14 @@ int main() {
     struct QuadrantMetadata quadrantMetada; 
 	pthread_t worker1;
 
-    quadrantMetada.escapeRadiusSquared = 4.0;
+    quadrantMetada.escapeRadiusSquared = 4;
     quadrantMetada.filePointer         = getFilePointer();
     quadrantMetada.x_max               = 800;
     quadrantMetada.y_max               = 800;
-    quadrantMetada.cx.max              = 1.5;
-    quadrantMetada.cx.min              = -2.5;
-    quadrantMetada.cy.max              = 2.0;
-    quadrantMetada.cy.min              = -2.0;
+    quadrantMetada.cx.max              = 2;
+    quadrantMetada.cx.min              = -2;
+    quadrantMetada.cy.max              = 2;
+    quadrantMetada.cy.min              = -2;
     quadrantMetada.pixel.width         = ( quadrantMetada.cx.max - quadrantMetada.cx.min ) / quadrantMetada.x_max;
     quadrantMetada.pixel.height        = ( quadrantMetada.cy.max - quadrantMetada.cy.min ) / quadrantMetada.y_max;
 
